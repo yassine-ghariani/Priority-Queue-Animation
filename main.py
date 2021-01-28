@@ -14,7 +14,7 @@ import random
 pygame.init()
 
 dis_width = 900
-dis_height = 900
+dis_height = 250
 
 dis = pygame.display.set_mode((dis_width, dis_height))
 dis.fill((249,235,224))
@@ -30,7 +30,11 @@ while not anim_over:
             anim_over = True
         if event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
-                queue.add((random.randint(0, 50), random.choice(NAMES)))
+                nums = [i.prio for i in queue.l]
+                new_num = random.randint(0,50)
+                while new_num in nums:
+                    new_num = random.randint(0,50)
+                queue.add((new_num, random.choice(NAMES)))
             elif event.button == 3:
                 queue.pop()
 pygame.quit()
