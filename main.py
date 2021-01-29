@@ -13,8 +13,8 @@ import random
 
 pygame.init()
 
-dis_width = 900
-dis_height = 250
+dis_width = 1700
+dis_height = 350
 
 dis = pygame.display.set_mode((dis_width, dis_height))
 dis.fill((249,235,224))

@@ -11,7 +11,7 @@ class PrioQueue:
     def __init__(self, dis):
         self.l = []
         self.dis = dis
-        self.spacing = {1 : (400, 50, 0), 2 : (200, 100, 400), 3 : (100, 150,200), 4 : (50, 200, 100)} # {level : (x, y, x_spacing)}
+        self.spacing = {1 : (800, 50, 0),2 : (400, 100, 800), 3 : (200, 150, 400), 4 : (100, 200,200), 5 : (50, 250, 100)} # {level : (x, y, x_spacing)}
     
     
     def upHeap(self, noeud):
@@ -54,7 +54,7 @@ class PrioQueue:
                 self.l[noeud].unselect()
     
     def add(self, element):
-        if len(self.l) < 15:
+        if len(self.l) < 31:
             level = math.floor(math.log(len(self.l) + 1, 2)) + 1
             x_node = self.spacing[level][0] + (len(self.l) + 1 - 2**(level-1)) * self.spacing[level][2]
             if len(self.l) > 0:
